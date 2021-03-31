@@ -1,0 +1,46 @@
+main .row .textmain {
+  font-family: 'Rubik', sans-serif;
+  padding-top: 25vh;
+  font-size: 55px;
+  line-height: 80px;
+  color: #22262F;
+}
+
+.imgtext {
+  margin-top: -60vh !important;
+  -webkit-transform: translate(0, -50%, -50%);
+          transform: translate(0, -50%, -50%);
+  font-size: 2rem;
+}
+
+h1 {
+  padding-bottom: 25px !important;
+}
+
+a {
+  color: #22262F !important;
+  outline: none !important;
+}
+
+.bg {
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  background-image: url("/assets/img/main1.png");
+  background-repeat: no-repeat;
+}
+
+.automatization {
+  background: linear-gradient(45deg, #EDC900 0%, #FB7BA2 80%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.nav-item {
+  padding-left: 200px;
+  font-size: 1.5rem;
+}
+/*# sourceMappingURL=style.css.map */
