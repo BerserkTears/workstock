@@ -16,5 +16,14 @@ if ($_SESSION['logged_user']->company == "none"){
 </head>
 <body>
     <a href="logout.php">Выход</a>
+    <?php if($_SESSION['logged_user']->company == "none"):?>
+            <!--Станица для работяги -->
+
+    <?php else: ?>
+            <!--Станица для компании --><br>
+            <a href="ctest.php"><p>Начать поиск сотрудников</p></a>
+    <?php endif; ?>
+
+    
 </body>
 </html>

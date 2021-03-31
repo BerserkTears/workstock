@@ -13,6 +13,10 @@ if (isset($data['do_reg'])){
             $user -> company = $data['company'];
             $user -> inn = $data['inn'];
             R::store($user);
+            $test=R::dispense('tests');
+            $test -> name = $data['company'];
+            $test -> kol=0;
+            R::store($test);
             $_SESSION['logged_user'] = $user;
             header('Location: /lk.php');
         }
