@@ -4,10 +4,20 @@ $data = $_POST;
 $test = R::findOne('tests', 'name = ?', array($_SESSION['logged_user']->company));
 if (isset($data['plus'])){
     $test->kol = $test->kol + 1;
+    for ($i = 1;$i <= $test['kol'] ; $i++){
+        $test['question'.$i] = $data['question'.$i];
+        $test['answer'.$i] = $data['answer'.$i];
+        $test['rating'.$i] = $data['rating'.$i];
+    }
     R::store($test);
 }
 if (isset($data['minus'])){
     $test->kol = $test->kol - 1;
+    for ($i = 1;$i <= $test['kol'] ; $i++){
+        $test['question'.$i] = $data['question'.$i];
+        $test['answer'.$i] = $data['answer'.$i];
+        $test['rating'.$i] = $data['rating'.$i];
+    }
     R::store($test);
 }
 if (isset($data['save'])){
@@ -31,9 +41,9 @@ if (isset($data['save'])){
         <?php for ($i = 1;$i <= $test['kol'] ; $i++){
             echo '
             <p>Вопрос '.$i.'</p><br>
-            <input type="text" name="question'.$i.'" placeholder = "Напишите вопрос" value = "'.$data['question'.$i].'"><br>
-            <input type="text" name="answer'.$i.'" placeholder = "Напишите ответ" value = "'.$data['answer'.$i].'">
-            <input type="text" name="rating'.$i.'" placeholder = "Напишите вес ответа" value = "'.$data['rating'.$i].'">
+            <input type="text" name="question'.$i.'" placeholder = "Напишите вопрос" value = "'.$test['question'.$i].'"><br>
+            <input type="text" name="answer'.$i.'" placeholder = "Напишите ответ" value = "'.$test['answer'.$i].'">
+            <input type="text" name="rating'.$i.'" placeholder = "Напишите вес ответа" value = "'.$test['rating'.$i].'">
             <br>';
         }
         ?>
