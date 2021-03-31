@@ -1,24 +1,32 @@
 <?php
 require "db.php";
-
 $data=$_POST;
-if (isset($data['do_reg'])){
-
+if (isset($data['do_log'])){
+    $user = R::findOne('users', 'login = ?', array($data['login']));
+    if ($user){
+        if($data['password'] == $user->password) {
+            $_SESSION['logged_user'] = $user;
+            header('Location: /lk.php');
+        } else {
+            echo '<script>alert("Неверный пароль")</script>';
+        }
+    } else {
+        echo '<script>alert("Пользователь не найден")</script>';
+    }
 }
 ?>
 
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Регистрация</title>
+    <title>Вход</title>
 </head>
 <body>
-    <form action="/registration.php" method="POST"> 
-        <input type="email" name="login" value= "<?php echo @$data[login] ?>">"
+    <form action="/login.php" method="POST"> 
+        <input type="email" name="login" value= "<?php echo @$data[login] ?>">
         <input type="password" name="password">
-        <input type="password" name="password1">
-        <button type="submit" name = "do_reg"> Зарегистрроваться </button>
+        <button type="submit" name = "do_log"> Вход </button>
     </form>
 </body>
 </html>
