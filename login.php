@@ -24,8 +24,8 @@ if (isset($data['do_log'])){
 </head>
 <body>
     <form action="/login.php" method="POST"> 
-        <input type="email" name="login" value= "<?php echo @$data[login] ?>">
-        <input type="password" name="password">
+        <input type="email" name="login" value= "<?php echo @$data[login] ?>" required placeholder = "Логин">
+        <input type="password" name="password" required placeholder = "Пароль">
         <button type="submit" name = "do_log"> Вход </button>
     </form>
 </body>

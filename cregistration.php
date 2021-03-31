@@ -10,7 +10,8 @@ if (isset($data['do_reg'])){
             $user -> password = $data['password'];
             $user -> name = $data['name'];
             $user -> surname = $data['surname'];
-            $user -> company = "none";
+            $user -> company = $data['company'];
+            $user -> inn = $data['inn'];
             R::store($user);
             $_SESSION['logged_user'] = $user;
             header('Location: /lk.php');
@@ -27,9 +28,11 @@ if (isset($data['do_reg'])){
     <title>Регистрация</title>
 </head>
 <body>
-    <form action="/registration.php" method="POST"> 
-        <input type="text" name="name" required placeholder = "Имя">
-        <input type="text" name="surname" required placeholder = "Фамилия">
+    <form action="/cregistration.php" method="POST"> 
+        <input type="text" name="name" required placeholder = "Имя контактного лица">
+        <input type="text" name="surname" required placeholder = "Фамилия контактного лица">
+        <input type="text" name="company" required placeholder = "Название компании">
+        <input type="text" name="inn" required placeholder = "ИНН">
         <input type="email" name="login" value= "<?php echo @$data[login] ?>" required placeholder = "Логин(почта)"> 
         <input type="password" name="password" required placeholder = "Пароль">
         <input type="password" name="password1" required placeholder = "Подтвердите пароль">
