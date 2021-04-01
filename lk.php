@@ -21,7 +21,8 @@ if ($_SESSION['logged_user']->company == "none"){
             <a href="list.php"><p>Начать поиск работы</p></a>
     <?php else: ?>
             <!--Станица для компании --><br>
-            <a href="ctest.php"><p>Начать поиск сотрудников</p></a>
+            <a href="ctest.php"><p>Редактировать тест</p></a>
+            <a href="rating.php"><p>Смотреть результаты</p></a>
     <?php endif; ?>
 
     
