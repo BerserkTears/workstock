@@ -108,9 +108,7 @@ $data=$_POST;
             </div>
             <div class="col-lg-12">
               <?php if ($_SESSION['logged_user']->company == "none"): ?>
-                <a href="#0" class="button button-lg radius-30">Редактировать информацию</a>
                 <a href="/find.php" class="button button-lg radius-30 ml-20">Подать заявку</a>
-                <a href="#0" class="button button-lg radius-30 ml-20">Ваши результаты</a>
               <?php else:?>
                 <a href="/testcreation.php" class="button button-lg radius-30 ml-20">Редактировать тест</a>
                 <a href="/userresults.php" class="button button-lg radius-30 ml-20">Результаты заявок</a>
