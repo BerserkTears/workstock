@@ -1,0 +1,62 @@
+body{
+    color: #22262F !important;
+}
+
+.hero-section-wrapper-1 {
+    background-image: url('../assets/img/main1.png');
+}
+.hero-image{
+    img{
+        width: 850px;
+    }
+}
+.automatization{
+    background: linear-gradient(45deg, #EDC900 0%, #FB7BA2 80%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+#nav4 li a{
+    font-family: 'Montserrat', sans-serif;
+    color: #495164 !important;
+}
+.hero-content-wrapper h2{
+    color: #22262F;
+}
+.button{
+    background: linear-gradient(45deg, #EDC900 0%, #FB7BA2 80%);
+
+}
+.contact-form-wrapper, .section-title, .signup-form-wrapper, .navbar-brand{
+    font-family: 'Montserrat', sans-serif;
+    color: #495164 !important;
+}
+#contact{
+    height: 100vh;
+    background-image: url('../assets/img/reg.png');
+}
+.logimg {
+    height: 70vh;
+}
+.signup-form-wrapper p {
+    a{
+        color: #495164 !important;
+    }
+}
+.signup{
+    background-image: url('../assets/img/loginbg.png');
+}
+.signup-form-wrapper{
+    border-radius: 71px;
+    background: #fafafa !important;
+    box-shadow:  44px 44px 74px #c6c6c6,
+                -44px -44px 74px #ffffff;
+}
+.section-title{
+    background: rgba(240, 240, 240, 0.42);
+
+    border-radius: 40px;
+
+}
+.yel{
+    color: #f78c00;
+}

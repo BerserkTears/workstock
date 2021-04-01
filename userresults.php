@@ -1,3 +1,7 @@
+<?php 
+    require 'db.php';
+    $data=$_POST;
+?>
 <!DOCTYPE html>
 <html lang="ru">
   <head>
@@ -16,60 +20,56 @@
     <link rel="stylesheet" href="assets/css/animate.css"/>
     <link rel="stylesheet" href="assets/css/lindy-uikit.css"/>
     <link rel="stylesheet" href="css/style.css">
-    <style>body{overflow: hidden;}</style>
+    <style>body{overflow: auto;}</style>
   </head>
   <body>
-    <section class="hero-section-wrapper-1">
-      <header class="header header-4">
-        <div class="navbar-area">
-          <div class="container">
-            <div class="row align-items-center">
-              <div class="col-lg-12">
-                <nav class="navbar navbar-expand-lg">
+
+  <nav class="navbar navbar-expand-lg">
                   <a class="navbar-brand" href="index.html">
                     Work<b class="yel">Stock</b>
                   </a>
-                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent4" aria-controls="navbarSupportedContent4" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="toggler-icon"></span>
-                    <span class="toggler-icon"></span>
-                    <span class="toggler-icon"></span>
-                  </button>
 
                   <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent4">
                     <ul id="nav4" class="navbar-nav ml-auto">
-                      <li class="nav-item">
-                        <a class="page-scroll" href="/userlogin.php">Вход</a>
+                      <li class="nav-item mr-20">
+                        <a class="page-scroll" href="/lk.php">Личный кабинет</a>
                       </li>
-                      <li class="nav-item">
-                        <a class="page-scroll" href="/userregister.php">Регистрация</a>
-                      </li>
-                      <li class="nav-item">
-                        <a class="page-scroll" href="/companyregister.php">Компания</a>
+                      <li class="nav-item mr-20">
+                        <a class="page-scroll" href="/testcreation.php">Редактировать тест</a>
                       </li>
                     </ul>
                     
                   </div>
                 </nav>
-              </div>
+
+    <section class="pricing-section pricing-style-1 mb-80">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-xxl-5 col-xl-5 col-lg-7 col-md-10">
+            <div class="section-title text-center mb-60">
+              <h3 class="mb-15">Результаты</h3>
             </div>
           </div>
         </div>
-      </header>
-      <div class="hero-section hero-style-1">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-6">
-              <div class="hero-content-wrapper">
-                <h2>Сервис <b class="automatization">автоматизации</b> приема на работу</h2>
-                  <a href="/userregister.php" class="button button-lg radius-30">Зарегистрироваться</a>
+        <div class="row justify-content-center">
+          <?php 
+          $rabs = R::find('ratings','company = ?', array($_SESSION['logged_user']->company));
+            asort($rabs,$rabs->score);
+          foreach ($rabs as $rab){
+            $rab->name = R::findOne('users','id = ?',array($rab->user_id));
+          echo '
+          <div class="col-lg-12 col-md-12 col-sm-12">
+            <div class="single-pricing row">
+              <div class="image col-lg-4">
+                <img src="assets/img/sber.png" alt="">
               </div>
+              <h4 class="col-lg-4 text-center">'.$rab->name->name.' '.$rab->name->surname.'</h4>
+              <h4 class="col-lg-4">Счёт: '.$rab->score.'</h4>
+              <a href="#0" class="button radius-30 col-lg-2">Связаться</a>
             </div>
-            <div class="col-lg-6 align-self-end">
-              <div class="hero-image">
-                <img src="assets/img/main.png" alt="">
-              </div>
-            </div>
-          </div>
+          </div>';
+          }
+          ?>
         </div>
 
       </div>
