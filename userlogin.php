@@ -59,11 +59,11 @@ if (isset($data['do_log'])){
                 <form action="/userlogin.php" class="signup-form pt-50 pl-50 pr-50 pb-50" method='POST'>
                   <div class="single-input">
                     <label for="login">Логин</label>
-                    <input type="text" id="login" name="login" placeholder="Ваш логин">
+                    <input type="text" id="login" name="login" placeholder="Ваш логин" required>
                   </div>
                   <div class="single-input">
                     <label for="password">Пароль</label>
-                    <input type="password" id="password" name="password" placeholder="Ваш пароль">
+                    <input type="password" id="password" name="password" placeholder="Ваш пароль" required> 
                   </div>
                   <div class="signup-button mb-25">
                     <button class="button button-lg radius-30 pl-60 pr-60" name='do_log'>Войти</button>

@@ -61,31 +61,31 @@ if (isset($data['do_reg'])){
                     <div class="col-md-7">
                       <div class="single-input">
                         <label for="name">Имя</label>
-                        <input type="text" id="name" name="name" class="form-input" placeholder="Введите ваше имя">
+                        <input required type="text" id="name" name="name" class="form-input" placeholder="Введите ваше имя">
                       </div>
                     </div>
                     <div class="col-md-7">
                       <div class="single-input">
                         <label for="surname">Фамилия</label>
-                        <input type="text" id="surname" name="surname" class="form-input" placeholder="Введите вашу фамилию">
+                        <input required type="text" id="surname" name="surname" class="form-input" placeholder="Введите вашу фамилию">
                       </div>
                     </div>
                     <div class="col-md-7">
                       <div class="single-input">
                         <label for="login">Логин</label>
-                        <input type="email" id="login" name="login" class="form-input" placeholder="Введите ваш логин">
+                        <input required type="email" id="login" name="login" class="form-input" placeholder="Введите ваш логин">
                       </div>
                     </div>
                     <div class="col-md-6">
                       <div class="single-input">
                         <label for="password">Пароль</label>
-                        <input type="password" id="password" name="password" class="form-input" placeholder="Введите ваш пароль">
+                        <input required type="password" id="password" name="password" class="form-input" placeholder="Введите ваш пароль">
                       </div>
                     </div>
                     <div class="col-md-6">
                       <div class="single-input">
                         <label for="password1">Подтвердите пароль</label>
-                        <input type="password" id="password1" name="password1" class="form-input" placeholder="Введите пароль ещё раз">
+                        <input required type="password" id="password1" name="password1" class="form-input" placeholder="Введите пароль ещё раз">
                       </div>
                     </div>
                     <div class="col-md-12">
