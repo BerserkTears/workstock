@@ -12,4 +12,4 @@ PHP<br>
 
 <h2>## Ссылки</h2>
 
-Ссылка на сайт: http://workstock.stockgolm.ru/
+Ссылка на сайт: http://workstock.stockgolm.xyz
